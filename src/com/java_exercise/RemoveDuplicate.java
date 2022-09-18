@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class RemoveDuplicate {
 	public static void removeDuplicate() {
-		int num[] = { 10, 30, 40, 30, 20, 40, 55 };
-		int num2[] = new int[num.length-1];
+		int num[] = { 10, 30, 40, 50, 30, 20, 40 };
+		int num2[] = new int[num.length - 1];
 		int j = 0, temp, k = 0;
 
 		for (int i = 0; i < num.length; i++) {
@@ -27,7 +27,7 @@ public class RemoveDuplicate {
 				k++;
 			}
 		}
-//		num2[j] = num[num.length - 1];
+		num2[num2.length - 2] = num[num.length - 1];
 
 		System.out.println("\n last move");
 

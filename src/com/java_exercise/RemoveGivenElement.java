@@ -3,28 +3,27 @@ package com.java_exercise;
 import java.util.Arrays;
 
 public class RemoveGivenElement {
-	public static int [] removeGivenElement() {
+	public static void removeGivenElement() {
 		int num[] = { 10, 30, 20, 70, 55 };
-		int count=0;
-		int j=0,pos=22;
+		int element = 20;
 
 		for (int i = 0; i < num.length; i++) {
-			if (num[i] ==pos) 
-				count++;
+			if (element == num[i]) {
+				for (int j=i; j < num.length-1; j++) {
+					num[j] = num[j + 1];
+				}
+				break;
+			}
+			
 		}
-		
-		int num2[] = new int[num.length-count];
-		
-		for (int i = 0; i < num.length-1; i++) {
-			if (num[i] !=pos) 
-				num2[j]=num[i];
-			j++;
+		int [] num2=new int[num.length-1];
+		for(int i=0;i<num2.length;i++) {
+			num2[i]=num[i];
 		}
-		for(int n:num2) {
+//		System.out.println(num2.length);
+		for (int n : num2) {
 			System.out.println(n);
 		}
-		return num2;
-		
 	}
 
 	public static void main(String[] args) {
