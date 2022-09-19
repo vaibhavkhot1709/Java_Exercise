@@ -4,38 +4,26 @@ import java.util.Arrays;
 
 public class RemoveDuplicate {
 	public static void removeDuplicate() {
-		int num[] = { 10, 30, 40, 50, 30, 20, 40 };
-		int num2[] = new int[num.length - 1];
-		int j = 0, temp, k = 0;
-
-		for (int i = 0; i < num.length; i++) {
-			for (j = i; j < num.length; j++) {
-				if (num[i] > num[j]) {
-					temp = num[i];
-					num[i] = num[j];
-					num[j] = temp;
+		int k=0;
+		int num[] = { 10, 30, 40, 30, 20, 60, 40, 50, 60, 70, 80,80 };
+		int num2[]=new int[num.length];
+		for(int i=0;i<num.length;i++) {
+			int c=0;
+			for(int j=i+1;j<num.length;j++) {
+				if(num[i]==num[j]) {
+					c++;
 				}
-			}
-		}
-		for (int n : num) {
-			System.out.print(" " + n);
-		}
-
-		for (int i = 0; i < num.length - 1; i++) {
-			if (num[i] != num[i + 1]) {
-				num2[k] = num[i];
+			}if(c==0) {
+				num2[k]=num[i];
 				k++;
 			}
 		}
-		num2[num2.length - 2] = num[num.length - 1];
-
-		System.out.println("\n last move");
-
-		for (int i = 0; i < num2.length - 1; i++) {
-			System.out.println(num2[i]);
-		}
+		int c[]=new int[k];
+		for(int i=0;i<c.length;i++)
+			c[i]=num2[i];
+		System.out.println("Before removing "+Arrays.toString(num));
+		System.out.println("After removing "+Arrays.toString(c));
 	}
-
 	public static void main(String[] args) {
 		removeDuplicate();
 	}
